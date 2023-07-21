@@ -31,7 +31,7 @@ export default class PlannerMarkdown {
         const filePath = this.file.todayPlannerFilePath();
         const fileContents = await (await this.file.getFileContents(filePath)).split('\n');
         const view = this.workspace.activeLeaf.view as MarkdownView;
-        const currentLine = view.sourceMode.cmEditor.getCursor().line;
+        const currentLine = view.editor.getCursor().line;
         const insertResult = [...fileContents.slice(0, currentLine), ...DAY_PLANNER_DEFAULT_CONTENT.split('\n'), ...fileContents.slice(currentLine)];
         this.file.updateFile(filePath, insertResult.join('\n'));
     }
@@ -95,7 +95,13 @@ export default class PlannerMarkdown {
         if(!this.settings.completePastItems) {
             check = this.check(item.isCompleted);
         }
-        return `- [${check}] ${item.rawTime} ${item.text}`;
+
+        let outputTask = `- [${check}] ${item.rawStartTime} `
+        if (item.rawEndTime !== '') {
+            outputTask += `- ${item.rawEndTime} `
+        }
+
+        return  outputTask + `${item.text}`;
     }
 
     private check(check: boolean) {

@@ -1,7 +1,31 @@
 # Day Planner
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/lynchjames/obsidian-day-planner/Release%20Build?logo=github&style=for-the-badge) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/lynchjames/obsidian-day-planner?style=for-the-badge&sort=semver)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/replete/obsidian-day-planner?style=for-the-badge)
 
+
+
+> ## Forked in 2023
+> I like this plugin so I've forked it and merged a few of the [open PRs](https://github.com/lynchjames/obsidian-day-planner/pulls) as the original author has abandoned it. I may or may not make changes to this plugin, but this should be useful.
+> ### Added features
+> - [Daily Mode](https://github.com/lynchjames/obsidian-day-planner/pull/179)
+> - [Break/end CSS classes](https://github.com/lynchjames/obsidian-day-planner/pull/113)
+> - [Sort PlanSummaryData items by time](https://github.com/lynchjames/obsidian-day-planner/pull/163)
+> - [Fix missing await](https://github.com/lynchjames/obsidian-day-planner/pull/135)
+> - [Add Ability to Specify Start and End Times for Task](https://github.com/lynchjames/obsidian-day-planner/pull/130)
+>
+> I've also written a [custom CSS snippet](https://github.com/replete/obsidian-minimal-theme-css-snippets/blob/main/%5Bplugin%5D%20Day%20Planner%20tweaks.css) to suit the minimal theme for this plugin.
+> ### To use this repo in your vault
+>
+> [Unzip the latest release](https://github.com/replete/obsidian-day-planner/releases/download/v0.60/obsidian-day-planner.v0.60.zip) into your plugins folder OR:
+> 1) Clone/fork this repo
+> 2) Run `npm i` or `yarn install` to install project
+> 3) Run `npm run build` or `yarn build`
+> 4) Copy `./test-vault/.obsidian/plugins/obsidian-day-planner` folder to `<your vault location>/.obsidian/plugins`
+> 
+> ### TODOs
+> - [ ] Update styles with from my CSS snippet (see Issues)
+> - [ ] Fix the track time button (see Issues)
+> - [ ] Add built-in pomodoro timer feature (see Issues)
 
 This repository contains a plugin for [Obsidian](https://obsidian.md/) for day planning and managing pomodoro timers from a task list in a Markdown note. 
 
@@ -179,6 +203,9 @@ Commands are used to insert a Day Planner for today within any note as well as u
 >Note: To add the Day Planner to the current note you first need to Link the Day Planner to the current note by running either one of the commands "Day Planner: Link today's Day Planner to the current Note" or "Day Planner: Add a Day Planner template for today to the current note" from the command palette.
 
 The Day Planner can be placed anywhere within a note as long as the format provided is used. Only the Day Planner section of the note will be updated as time progresses.
+
+**Daily mode**
+The plugin automatically looks for the day planner in daily notes. The Daily notes plugin must be enabled.
 
 ### Complete Past Planner Items
 
